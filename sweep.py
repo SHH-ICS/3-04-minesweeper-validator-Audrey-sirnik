@@ -8,11 +8,8 @@ def validate( block_data ):
   bomb_count = 0
   for i in range(3):
     for j in range(3):
-      if i != 1 and j != 1:
-        if block_data [i][j]==-1:
-          bomb_count = bomb_count + 1
-    if type(block_data[1][1]) != int:
-      return "Error,the interior square is not a number"
+      if block_data [i][j]==-1:
+        bomb_count = bomb_count + 1
     if block_data [1][1] == -1:
       return "bomb"
     if block_data[1][1] == bomb_count:
@@ -24,7 +21,7 @@ def validate( block_data ):
 
 grid = [
   [-1,1,0],
-  [-1,1,0],
-  [-1,0,0]
+  [-1,2,0],
+  [0,0,0]
 ]
 print (validate(grid))
